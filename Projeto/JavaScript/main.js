@@ -36,23 +36,76 @@ function segundo(){
 
 function terceiro(){
     var letras = ['a', 'm', 'b', 'i', 't', 'u', 's', '.', 'i', 'o'];
-    letras.forEach(alertFunc);
+    var tempoInicial = 3000;
+  
+    for (let i = 0; i < letras.length; i++){
+        var tempo ;
+        //Controle do tempo.Onde quando passar na possição do inicial do arrayLetras{ a, m, ...} 
+        // irá gastar 3 segundos para chamar a primeira posição imprimindo no console.log, e assim para as proximas posições.
+        if(i == 1){
+            tempo = tempoInicial *2;
+        }else if(i > 1){
+            tempo = tempo + tempoInicial; 
+        }else {
+            tempo = tempoInicial;
+        }
 
-    /*for (let i = 0; i < letras.length; i++){
-        setTimeout(function(){ alertFunc(letras[i]); }, 3000);
-        
-
-    }*/
+        var minhaPromise = function() {
+            return new Promise (function (resolve, reject){
+                setTimeout(resolve, tempo, letras[i]);
+            })
+        }
+        minhaPromise()
+        .then(function(response){
+            //alert(response);
+            console.log(response);
+        });
+    }
 }
-function alertFunc(letra){
-    return new Promise (( resolve, reject) => {
-        setTimeout(() => {
-            alert(letra);
-        },3000)
-    })
 
-    
+
+/*
+4 - utilizando uma estrutura de repetição (map, foreach, for, for in, for of), percorra a lista abaixo e imprima na tela apenas o atributo 'nome'
+
+    [
+        {
+            "nome": "Thiago",
+            "idade": 4567
+        },
+        {
+            "nome": "Caio",
+            "idade": 8
+        },
+        {
+            "nome": "Bruno",
+            "idade": 24
+        }
+    ]
+*/
+function quarto() {
+    var pessoas = 
+    [
+        {
+            "nome": "Thiago",
+            "idade": 4567
+        },
+        {
+            "nome": "Caio",
+            "idade": 8
+        },
+        {
+            "nome": "Bruno",
+            "idade": 24
+        }
+    ]
+
+    for(pessoa of pessoas){
+        alert(pessoa.nome);
+
+    }
 }
+
+
 
 
 
