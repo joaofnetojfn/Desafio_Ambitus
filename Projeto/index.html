@@ -7,12 +7,53 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='CSS/main.css'>
     <script src='JavaScript/main.js'></script>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/footer-logo.css">
 </head>
 <body>
         <h1 id = 'tituloPag'>Desafio Ambitus</h1> 
-        <button onclick="primeiro()">Primeiro Desafio </button>
-        <button onclick="segundo()">Segundo Desafio </button>
-        <button onclick="terceiro()">Terceiro Desafio </button>
-        <button onclick="quarto()">Quarto Desafio </button>
+        <div id='conteudo'>
+            <h3 class="margemElemntTitulo"> Clique no botão para a resolução do desafio. </h3>
+
+            <p class="margemElemnt"> 1 - Dado o seguinte array de strings ['a', 'm', 'b', 'i', 't', 'u', 's', '.', 'i', 'o']
+                .Crie um script que exiba na tela a seguinte string <strong>'ambitus.io'.</strong></p>
+            <p class="margemElemnt">2 - Dado o array abaixo, percorra-o e imprima na tela apenas os dados que não são undefined ou null.</p>
+            <p class="margemElemnt">3 - Exiba todos os itens do array abaixo, 1 por 1 após 3 segundos usando o conceito de Promise e setTimeout.</p>
+            <p class="margemElemnt">4 - utilizando uma estrutura de repetição (map, foreach, for, for in, for of), percorra a lista abaixo e imprima na tela apenas o atributo 'nome'.</p>
+            
+            <button onclick="primeiro()">Primeiro Desafio </button>
+            <button onclick="segundo()">Segundo Desafio </button>
+            <button onclick="terceiro()">Terceiro Desafio </button>
+            <button onclick="quarto()">Quarto Desafio </button>
+        </div>
+
+        <footer id="myFooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h2 class="logo"><a id='logoLink' href="#"> <img id='logo'> </a></h2>
+                        </div>
+                        <div class="col-sm-5">
+                            <h5>Sobre</h5>
+                            <ul>
+                                <li>Formação no <a href="http://iftm.edu.br/">Instituto Federal do Triângulo Mineiro Uberlândia Centro</a></li>
+                                <li>Analista e desenvolvedor Web (Front-End, back-end e Banco de Dados)</li>x
+                            </ul>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="social-networks">
+                                <a href="https://www.linkedin.com/in/joaoferreiraneto" class="twitter"><i class="fa fa-linkedin-square"></i></a>
+                                <a id='socialGit' href="#" class="facebook"><i class="fa fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <p>© 2019 João Ferreira Neto</p>
+                </div>
+            </footer>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>

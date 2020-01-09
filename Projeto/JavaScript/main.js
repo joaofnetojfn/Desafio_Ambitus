@@ -105,6 +105,28 @@ function quarto() {
     }
 }
 
+var xhr = new XMLHttpRequest();
+
+xhr.open('GET','https://api.github.com/users/joaofnetojfn');
+xhr.send(null);
+
+xhr.onreadystatechange = function(){
+    if (xhr.readyState === 4) {
+        
+
+
+        console.log(JSON.parse(xhr.responseText));
+        var response = JSON.parse(xhr.responseText);
+        
+        var linkLogo = document.querySelector('#logoLink');
+        var gitSocial = document.querySelector('#socialGit');
+        var logoRodaP = document.querySelector('#logo');
+        linkLogo.setAttribute('href',response.html_url);
+        gitSocial.setAttribute('href',response.html_url);
+        logoRodaP.setAttribute('src',response.avatar_url);
+    }
+}
+
 
 
 
