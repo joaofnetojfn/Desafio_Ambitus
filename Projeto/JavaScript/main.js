@@ -1,14 +1,15 @@
-/*1 - Dado o seguinte array de strings
+var contagemP;
+var contagemS;
+var contagemT;
+var contagemQ; 
+
+/*1 - Dado o seguinte array de strings.
 
     ['a', 'm', 'b', 'i', 't', 'u', 's', '.', 'i', 'o']
 Crie um script que exiba na tela a seguinte string 'ambitus.io'.
 
 */
 var letras = ['a', 'm', 'b', 'i', 't', 'u', 's', '.', 'i', 'o'];
-var contagemP;
-var contagemS;
-var contagemT = 0;
-var contagemQ = "";  
 
 function primeiroDesafio() {
     var palavra = '';
@@ -31,7 +32,7 @@ function primeiroDesafio() {
 
 
 /*
-2 - Dado o array abaixo, percorra-o e imprima na tela apenas os dados que não são undefined ou null
+2 - Dado o array abaixo, percorra-o e imprima na tela apenas os dados que não são undefined ou null.
 
     ['o', undefined, null, 'l', undefined, 'a', ' null', null]
 */
@@ -53,7 +54,7 @@ function segundoDesafio(){
 }
 
 /*
-3 - Exiba todos os itens do array abaixo, 1 por 1 após 3 segundos usando o conceito de Promise e setTimeout
+3 - Exiba todos os itens do array abaixo, 1 por 1 após 3 segundos usando o conceito de Promise e setTimeout.
 
     ['a', 'm', 'b', 'i', 't', 'u', 's', '.', 'i', 'o']
 */
@@ -64,6 +65,7 @@ function terceiroDesafio(){
   
     for (let i = 0; i < letras.length; i++){
         var tempo ;
+        contagemT = i;
         //Controle do tempo.Onde quando passar na possição do inicial do arrayLetras{ a, m, ...} 
         // irá gastar 3 segundos para chamar a primeira posição imprimindo no console.log, e assim para as proximas posições.
         if(i == 1){
@@ -95,22 +97,10 @@ function terceiroDesafio(){
 
 
 /*
-4 - utilizando uma estrutura de repetição (map, foreach, for, for in, for of), percorra a lista abaixo e imprima na tela apenas o atributo 'nome'
+4 - utilizando uma estrutura de repetição (map, foreach, for, for in, for of), percorra a lista abaixo e imprima na tela apenas 
+    o atributo 'nome'.
 
-    [
-        {
-            "nome": "Thiago",
-            "idade": 4567
-        },
-        {
-            "nome": "Caio",
-            "idade": 8
-        },
-        {
-            "nome": "Bruno",
-            "idade": 24
-        }
-    ]
+    [{"nome": "Thiago","idade": 4567},{"nome": "Caio","idade": 8}{"nome": "Bruno","idade": 24}]
 */
 function quartoDesafio() {
     var resolucaoQ = document.querySelector('#resolucaoQuarta');
@@ -129,16 +119,15 @@ function quartoDesafio() {
             "idade": 24
         }
     ]
-    contagemQ = contagemNumero(contagemQ);
+   
     
 
     for(let i = 0; i<pessoas.length; i++){
-        //alert(pessoas[i].nome);
-        contagemQ = contagemNumero(i);
+        (i == 0) ? contagemQ = 1 : contagemQ =  contagemNumero(contagemQ);
         
         var paragrafoRespostaQ = document.createElement('p');
         paragrafoRespostaQ.style.cssFloat="lefth";
-        paragrafoRespostaQ.innerText = (contagemQ === 1 ) ? "O Atributo nome são: "+pessoas[i].nome+" " :  pessoas[i].nome + " ";
+        paragrafoRespostaQ.innerText = (contagemQ == 1 ) ? "O Atributo nome são: "+pessoas[i].nome+", " :  pessoas[i].nome + ", ";
         resolucaoQ.appendChild(paragrafoRespostaQ);
 
     }
