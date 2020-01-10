@@ -152,6 +152,7 @@ xhr.onreadystatechange = function(){
     }
 }
 
+
 function contagemNumero(valor){
     if(typeof valor === "undefined" || valor == 0){
         valor = 1;

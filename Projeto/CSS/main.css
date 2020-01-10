@@ -5,12 +5,22 @@
 .margemElemnt{
     margin-left: 25px;
 }
+#imgLogo{
+    width: 700px;
+    margin-left: 25%;
+    margin-top: -130px;
+}
+#desafioPalavra{
+    display: inline;
+    width: 110px;
+    margin: 90px 19px 6px 179px;
+}
 #tituloPag{
-    text-align: center;
-    font-size: 75px;
+
     border-bottom-width:5px;
     border-bottom-style:groove;
     border-bottom-color:black;
+    
 }
 #conteudo{
     border-bottom-width:5px;
