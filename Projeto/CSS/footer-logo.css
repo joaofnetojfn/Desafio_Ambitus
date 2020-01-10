@@ -15,10 +15,6 @@
     margin-bottom: 60px;
 }
 
-#myFooter .navbar-brand {
-    margin-top: 45px;
-    height: 65px;
-}
 
 #myFooter .footer-copyright p {
     margin: 10px;
@@ -72,16 +68,16 @@
     text-decoration: none;
 }
 
-#myFooter .facebook:hover {
-    color: #0077e2;
+#myFooter .git:hover {
+    color: #1a232b;
 }
 
 #myFooter .instagram:hover {
     color: purple;
 }
 
-#myFooter .twitter:hover {
-    color: #00aced;
+#myFooter .linkedin:hover {
+    color: #71beda;
 }
 
 #myFooter .btn {

@@ -7,8 +7,10 @@ Crie um script que exiba na tela a seguinte string 'ambitus.io'.
 var letras = ['a', 'm', 'b', 'i', 't', 'u', 's', '.', 'i', 'o'];
 var contagemP;
 var contagemS;
+var contagemT = 0;
+var contagemQ = "";  
 
-function primeiro() {
+function primeiroDesafio() {
     var palavra = '';
     contagemP = contagemNumero(contagemP);
 
@@ -25,14 +27,7 @@ function primeiro() {
     resolucaoPrimeira.appendChild(paragrafoResposta);
 }
 
-function contagemNumero(valor){
-    if(typeof valor === "undefined"){
-        valor = 1;
-    }else if(valor == 1){
-        valor++;
-    }
-    return valor;
-}
+
 
 
 /*
@@ -40,7 +35,7 @@ function contagemNumero(valor){
 
     ['o', undefined, null, 'l', undefined, 'a', ' null', null]
 */
-function segundo(){
+function segundoDesafio(){
     var alfaNumericos =  ['o', undefined, null, 'l', undefined, 'a', ' null', null];
     
     var resolucaoS = document.querySelector('#resolucaoSegunda');
@@ -63,7 +58,7 @@ function segundo(){
     ['a', 'm', 'b', 'i', 't', 'u', 's', '.', 'i', 'o']
 */
 
-function terceiro(){
+function terceiroDesafio(){
     var letras = ['a', 'm', 'b', 'i', 't', 'u', 's', '.', 'i', 'o'];
     var tempoInicial = 3000;
   
@@ -88,6 +83,12 @@ function terceiro(){
         .then(function(response){
             //alert(response);
             console.log(response);
+            contagemT = contagemNumero(contagemT);
+            var resolucaoT = document.querySelector('#resolucaoTerceira');
+            var paragrafoRespostaT = document.createElement('p');
+            paragrafoRespostaT.style.cssFloat="lefth";
+            paragrafoRespostaT.innerText = (contagemT > 1 )?" "+ response : response;
+            resolucaoT.appendChild(paragrafoRespostaT);
         });
     }
 }
@@ -111,7 +112,8 @@ function terceiro(){
         }
     ]
 */
-function quarto() {
+function quartoDesafio() {
+    var resolucaoQ = document.querySelector('#resolucaoQuarta');
     var pessoas = 
     [
         {
@@ -127,9 +129,17 @@ function quarto() {
             "idade": 24
         }
     ]
+    contagemQ = contagemNumero(contagemQ);
+    
 
-    for(pessoa of pessoas){
-        alert(pessoa.nome);
+    for(let i = 0; i<pessoas.length; i++){
+        //alert(pessoas[i].nome);
+        contagemQ = contagemNumero(i);
+        
+        var paragrafoRespostaQ = document.createElement('p');
+        paragrafoRespostaQ.style.cssFloat="lefth";
+        paragrafoRespostaQ.innerText = (contagemQ === 1 ) ? "O Atributo nome são: "+pessoas[i].nome+" " :  pessoas[i].nome + " ";
+        resolucaoQ.appendChild(paragrafoRespostaQ);
 
     }
 }
@@ -141,9 +151,6 @@ xhr.send(null);
 
 xhr.onreadystatechange = function(){
     if (xhr.readyState === 4) {
-        
-
-
         console.log(JSON.parse(xhr.responseText));
         var response = JSON.parse(xhr.responseText);
         
@@ -156,7 +163,14 @@ xhr.onreadystatechange = function(){
     }
 }
 
-
+function contagemNumero(valor){
+    if(typeof valor === "undefined" || valor == 0){
+        valor = 1;
+    }else if(valor >=1){
+        valor++;
+    }
+    return valor;
+}
 
 
 
