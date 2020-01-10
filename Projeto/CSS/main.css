@@ -29,5 +29,42 @@ button{
     border-style:double;
     border-color:red;
     width: 20%;
-  
+}
+#resolucaoPrimeira{
+    width:100%;
+    height: 51px;
+}
+#resolucaoPrimeira p{
+    display: inline;
+}
+
+#resolucaoSegunda{
+    width: 100%;
+    height: 51px;
+    margin-top: 20px;
+}
+#resolucaoSegunda p{
+    display: inline;
+}
+
+
+#resolucaoTerceira{
+    width: 285px;
+    height: 51px;
+    margin-top: 20px;
+}
+
+
+#resolucaoQuarta{
+    width: 285px;
+    height: 51px;
+    margin-top: 20px;
+}
+
+
+
+#respostas h3{
+    margin-left: 50px;
+    width: 190px;
+    float: left;
 }

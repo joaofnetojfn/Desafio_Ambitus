@@ -5,14 +5,35 @@ Crie um script que exiba na tela a seguinte string 'ambitus.io'.
 
 */
 var letras = ['a', 'm', 'b', 'i', 't', 'u', 's', '.', 'i', 'o'];
+var contagemP;
+var contagemS;
+
 function primeiro() {
     var palavra = '';
+    contagemP = contagemNumero(contagemP);
 
     for(letra of letras){
         palavra += letra;
     }
-    alert(palavra);
+    //alert(palavra);
+    var resolucaoPrimeira = document.querySelector('#resolucaoPrimeira');
+    var paragrafoResposta = document.createElement('p');
+
+    paragrafoResposta.setAttribute('id', 'paragrafo 1_'+contagemP);
+    paragrafoResposta.style.cssFloat="lefth";
+    paragrafoResposta.innerText = (contagemP > 1 )?" "+ palavra : palavra;
+    resolucaoPrimeira.appendChild(paragrafoResposta);
 }
+
+function contagemNumero(valor){
+    if(typeof valor === "undefined"){
+        valor = 1;
+    }else if(valor == 1){
+        valor++;
+    }
+    return valor;
+}
+
 
 /*
 2 - Dado o array abaixo, percorra-o e imprima na tela apenas os dados que não são undefined ou null
@@ -21,9 +42,17 @@ function primeiro() {
 */
 function segundo(){
     var alfaNumericos =  ['o', undefined, null, 'l', undefined, 'a', ' null', null];
+    
+    var resolucaoS = document.querySelector('#resolucaoSegunda');
     for(alfa of alfaNumericos){
         if(alfa !== 'undefined' && alfa != null){
-            alert(alfa);
+            contagemS = contagemNumero(contagemS);
+            //alert(alfa);
+            var paragrafoRespostaS = document.createElement('p');
+            paragrafoRespostaS.setAttribute('id', 'paragrafo 2_'+contagemS);
+            paragrafoRespostaS.style.cssFloat="lefth";
+            paragrafoRespostaS.innerText = (contagemS > 1 )?" "+ alfa : alfa;
+            resolucaoS.appendChild(paragrafoRespostaS);
         }
     }
 }
